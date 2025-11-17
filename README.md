@@ -55,6 +55,15 @@ WeakPasswordSecurityProject/
 │
 ├── Lab_Screenshots/
 │   ├── [01_Ubuntu_Server_Installed_on_VM.png]
+Virtual Lab Setup
+1. Virtual Machines Created
+Ubuntu-Server VM
+•	Purpose: Target machine (victim server)
+•	OS: Ubuntu Server 24.04 LTS
+•	Memory: 4096 MB
+•	Disk: 20–30 GB
+•	Network Adapter: Bridged Adapter
+
 │   ├── 01_Ubuntu_Server_Installed_on_VM.png
 │   ├── 02_Kali-Attacker_Installed_on_VM.png
 │   ├── 03_Network_Config_on_Kali.png
