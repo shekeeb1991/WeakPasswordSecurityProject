@@ -71,20 +71,69 @@ WeakPasswordSecurityProject/
                                                   •	Disk: 30–40 GB
 
 │   ├── 03_Network_Config_on_Kali.png
+│   ├── 04_Network_Config_on_Ubuntu.png
                                               Network Configuration (Bridged Mode)
+                                              For both VMs:
                                               Settings → Network → Adapter 1
                                                   •	✔ Enable Network Adapter
                                                   •	✔ Attached to: Bridged Adapter
                                                   •	✔ Name: Your Wi-Fi card (Intel AX201 or similar)
 
-
-│   ├── 04_Network_Config_on_Ubuntu.png
 │   ├── 05_Ubuntu_Server_Get_IP.png
+                                              Confirm Network Connection
+                                              Ubuntu-Server: Get IP
+                                                  • ip a
+                                                  • Ubuntu-Server IP: 192.168.1.174
+
+
 │   ├── 06_Kali_Ping_Ubuntu.png
+                                              Kali: Ping Ubuntu
+                                              ping 192.168.1.174
+                                              If we see:
+                                              64 bytes from 192.168.1.174: icmp_seq=1 ttl=64 time=…
+                                                  ✔ Communication works
+                                                  ✔ Lab environment successful
+                                                  ✔ VMs are on the same network
+
+
 │   ├── 07_Server_Config_Install_SSH.png
+                                              Server Configuration
+                                              Install SSH (Ubuntu-Server)
+                                              Commands:
+                                                  sudo apt update
+                                                  sudo apt install openssh-server -y
+                                                  sudo systemctl enable ssh
+                                                  sudo systemctl start ssh
+                                                  sudo systemctl status ssh
+                                                  Result: active (running)
+
 │   ├── 08_Create_Weak_Password.png
+                                              Create a Weak Password User
+                                              Command:
+                                                  sudo adduser weakuser
+                                                  Password used: Ann123 (intentionally weak)	
+                                                  User fields:
+                                                  •	Name: Shekeeb
+                                                  •	Room Number: 123
+                                                  •	Work Phone: 444444444
+
 │   ├── 09_Attacker_Password_Tool.png
+                                            Create a Strong Password User
+                                            Command:
+                                            sudo adduser stronger
+                                            Password: MyS3cureP@ss2025
+                                            Fields:
+                                                  •	Name: Ghiasi
+                                                  •	Room Number: 123
+                                                  •	Work Phone: 44444
+
 │   ├── 10_Nmap_Scan.png
+                                          Attack & Password Cracking
+                                          Kali: Install Required Tools
+                                          sudo apt update
+                                          sudo apt install nmap hydra medusa john wordlists -y
+
+
 │   ├── 11_Hydra_Attack_Weak_User.png
 │   ├── 12_Create_Strong_User.png
 │   ├── 13_Offline_Attack_John.png
