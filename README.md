@@ -28,7 +28,7 @@ The project uses a virtual lab simulation (**Kali Linux attacker → Ubuntu SSH 
 - Present results with professional documentation  
 
 ---
-
+[01_Ubuntu_Server_Installed_on_VM.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/01_Ubuntu_Server_Installed_on_VM.png)
 ## 🖥️ Lab Setup Overview
 
 ### **Virtual Machines**
