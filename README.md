@@ -54,6 +54,7 @@ Network	Host-Only Adapter
 WeakPasswordSecurityProject/
 │
 ├── Lab_Screenshots/
+│   ├── [01_Ubuntu_Server_Installed_on_VM.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/01_Ubuntu_Server_Installed_on_VM.png)
 │   ├── 01_Ubuntu_Server_Installed_on_VM.png
 │   ├── 02_Kali-Attacker_Installed_on_VM.png
 │   ├── 03_Network_Config_on_Kali.png
@@ -93,31 +94,6 @@ WeakPasswordSecurityProject/
 - **Cracked:** ✅ Yes  
 - **Time:** ~5 seconds  
 - **Result:** Success  
-
-
-[01_Ubuntu_Server_Installed_on_VM.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/01_Ubuntu_Server_Installed_on_VM.png)
-[02_Kali-Attacker_Installed_on_VM.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/02_Kali-Attacker_Installed_on_VM.png)
-[03_Network_Config_on_Kali.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/03_Network_Config_on_Kali.png)
-[04_Network_Config_on_Ubuntu.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/04_Network_Config_on_Ubuntu.png)
-[05_Ubuntu_Server_Get_IP.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/05_Ubuntu_Server_Get_IP.png)
-[06_Kali_Ping_Ubuntu.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/06_Kali_Ping_Ubuntu.png)
-[07_Server_Config_Install_SSH.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/07_Server_Config_Install_SSH.png)
-[08_Create_Weak_Password.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/08_Create_Weak_Password.png)
-[09_Attacker_Password_Tool.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/09_Attacker_Password_Tool.png)
-[10_Nmap_Scan.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/10_Nmap_Scan.png)
-[11_Hydra_Attack_Weak_User.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/11_Hydra_Attack_Weak_User.png)
-[12_Create_Strong_User.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/12_Create_Strong_User.png)
-[13_Offline_Attack_John.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/13_Offline_Attack_John.png)
-[14_Export_Hashes.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/14_Export_Hashes.png)
-[15_Copy_Hashes_SCP.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/15_Copy_Hashes_SCP.png)
-[16_John_Crack.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/16_John_Crack.png)
-[17_John_Results.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/17_John_Results.png)
-[18_Bitwarden.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/18_Bitwarden.png)
-[19_Create_Vault_Entry.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/19_Create_Vault_Entry.png)
-[20_Username_Stronguser.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/20_Username_Stronguser.png)
-[21_Password_Generator.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/21_Password_Generator.png)
-[22_MFA_Demo.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/22_MFA_Demo.png)
-[23_Users_List.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/23_Users_List.png)
 
 ---
 
