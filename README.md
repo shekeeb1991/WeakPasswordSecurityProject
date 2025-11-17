@@ -1,38 +1,53 @@
-🛡️ Weak Password Security Project
+# 🔐 Weak Password Security Project
 
-Course: BFOR 419 – Cybersecurity Risk Management
-Student: Shekeeb Shadab Ghiasi
-Instructor: De Oliveira Lima, Vinicius
-Term: Fall 2025
+**Course:** BFOR 419 – Cybersecurity Risk Management  
+**Student:** Shekeeb Shadab Ghiasi  
+**Instructor:** De Oliveira Lima, Vinicius  
+**Term:** Fall 2025  
 
-📌 Project Overview
+---
 
-Weak and reused passwords remain one of the biggest vulnerabilities in cybersecurity.
-This project demonstrates how attackers exploit insecure passwords and how strong
-password practices and MFA prevent compromise.
+## 🌟 Project Overview
 
-The project uses a virtual lab simulation (Kali Linux attacker → Ubuntu SSH server)
-to test brute-force, dictionary, and offline hash cracking attacks.
+Weak and reused passwords remain one of the biggest vulnerabilities in cybersecurity.  
+This project demonstrates how attackers exploit insecure passwords and how strong password practices and MFA prevent compromise.
 
-🎯 Objectives
+The project uses a virtual lab simulation (**Kali Linux attacker → Ubuntu SSH server**) to test:
+- brute-force attacks,
+- dictionary attacks,  
+- and offline hash cracking.
 
-Understand behavioral and technical causes of weak password use
+---
 
-Demonstrate Hydra brute-force attacks on SSH
+## 🎯 Objectives
 
-Demonstrate offline cracking with John the Ripper
+- Understand behavioral and technical causes of weak password use  
+- Demonstrate Hydra brute-force attacks on SSH  
+- Demonstrate offline cracking with John the Ripper  
+- Evaluate protection strategies: strong passwords, password managers, MFA  
+- Present results with professional documentation  
 
-Evaluate protection strategies: strong passwords, password managers, MFA
+---
 
-Present results with professional documentation
+## 🖥️ Lab Setup Overview
 
-🧪 Lab Environment
-Component	Description
-Attacker VM	Kali Linux (Hydra, John the Ripper)
-Target VM	Ubuntu SSH Server
-Wordlist	Custom weak_passwords.txt
-Password Manager	Bitwarden
-MFA Demo	Duo Mobile
+### **Virtual Machines**
+- **Kali-Attacker** – brute-force testing  
+- **Ubuntu-Server** – SSH enabled target  
+- **Metasploitable2** (optional for hash testing)
+
+### **Users Created**
+- `weakuser` – weak password  
+- `stronguser` – strong Bitwarden-generated password  
+
+### **Network**
+- VirtualBox **Host-Only Adapter** for safe isolated testing
+
+---
+
+## 📂 Repository Structure
+
+
 Network	Host-Only Adapter
 📂 Repository Structure
 WeakPasswordSecurityProject/
@@ -69,55 +84,67 @@ WeakPasswordSecurityProject/
 └── Configs/
     └── weak_passwords.txt
 
-🧵 Attack Scenarios Tested
-✔️ 1. Hydra SSH – Weak Password
 
-User: weakuser
+---
 
-Password cracked in 5 seconds
+## 🔥 Attack Scenarios Tested
 
-Attack success: Yes
+### **1️⃣ Hydra SSH — Weak Password**
+- **User:** `weakuser`  
+- **Cracked:** ✅ Yes  
+- **Time:** ~5 seconds  
+- **Result:** Success  
 
-✔️ 2. Hydra SSH – Strong Password
+---
 
-User: stronguser
+### **2️⃣ Hydra SSH — Strong Password**
+- **User:** `stronguser`  
+- **Password:** 20+ random Bitwarden password  
+- **Cracked:** ❌ No  
+- **Time tested:** 2 minutes  
+- **Result:** Failed (Strong)  
 
-Password: 20+ random Bitwarden password
+---
 
-Attack ran for 2+ minutes with 0 valid logins
+### **3️⃣ John the Ripper — Offline Hash**
+- **Hash type:** /etc/shadow extract  
+- **Cracked:** ✅ Yes  
+- **Time:** ~10 seconds  
 
-Attack success: ❌ Failed (Strong)
+---
 
-✔️ 3. John the Ripper — Offline Hash
+## 📊 Results Summary
 
-Cracked weak hash in ~10 seconds
+The virtual lab proved that **weak passwords are extremely vulnerable**,  
+while **strong, randomly generated passwords resist attacks**.
 
-📊 Results Summary
+### **Key Findings**
+- Weak SSH password was cracked in **5 seconds**  
+- Strong SSH password **did not crack**  
+- John the Ripper cracked weak offline password **instantly**  
+- MFA blocked login even when the password was known  
 
-The virtual lab proved that weak passwords are extremely vulnerable,
-while strong, randomly generated passwords resist attacks.
+---
 
-Key Findings
+## 🔒 Conclusion
 
-Weak SSH password was cracked in 5 seconds
+Using:
+- password managers  
+- strong passwords  
+- MFA  
 
-Strong SSH password did not crack during testing
+**dramatically reduces credential compromise risk.**
 
-John the Ripper cracked weak offline password instantly
+---
 
-MFA (Duo Mobile) blocked login even if password is known
+## 📜 License
 
-Conclusion
+This project is for academic use only as part of the University at Albany’s  
+**BFOR 419 – Cybersecurity Risk Management** course.
 
-Using password managers, strong passwords, and MFA
-dramatically reduces credential compromise risk.
+---
 
-📘 License
+## ✍️ Prepared By
 
-This project is for academic use only as part of the University at Albany's
-BFOR 419 – Cybersecurity Risk Management course.
-
-👨‍🎓 Prepared By
-
-Shekeeb Shadab Ghiasi
-University at Albany — Fall 2025
+**Shekeeb Shadab Ghiasi**  
+University at Albany – Fall 2025  
