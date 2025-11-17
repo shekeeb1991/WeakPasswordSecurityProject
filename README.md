@@ -61,13 +61,23 @@ WeakPasswordSecurityProject/
                                                     •	Purpose: Target machine (victim server)
                                                     •	OS: Ubuntu Server 24.04 LTS
                                                     •	Memory: 4096 MB
-                                                    •	Disk: 20–30 GB
-                                                    •	Network Adapter: Bridged Adapter]
+                                                    •	Disk: 20–30 GB]
 
-
-│   ├── 01_Ubuntu_Server_Installed_on_VM.png
 │   ├── 02_Kali-Attacker_Installed_on_VM.png
+                                              Kali-Attacker VM
+                                                  •	Purpose: Attacker machine
+                                                  •	OS: Kali Linux rolling
+                                                  •	Memory: 4096 MB
+                                                  •	Disk: 30–40 GB
+
 │   ├── 03_Network_Config_on_Kali.png
+                                              Network Configuration (Bridged Mode)
+                                              Settings → Network → Adapter 1
+                                                  •	✔ Enable Network Adapter
+                                                  •	✔ Attached to: Bridged Adapter
+                                                  •	✔ Name: Your Wi-Fi card (Intel AX201 or similar)
+
+
 │   ├── 04_Network_Config_on_Ubuntu.png
 │   ├── 05_Ubuntu_Server_Get_IP.png
 │   ├── 06_Kali_Ping_Ubuntu.png
