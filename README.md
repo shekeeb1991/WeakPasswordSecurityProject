@@ -50,42 +50,41 @@ The project uses a virtual lab simulation (**Kali Linux attacker → Ubuntu SSH 
 
 Network	Host-Only Adapter
 📂 Repository Structure
+``` 
 WeakPasswordSecurityProject/
 │
 ├── Lab_Screenshots/
-│   ├── 01_Ubuntu Server Installed on VM.png
-│   ├── 02_Kali-Attaker Installed on VM.png
-│   ├── 03_Network Config on Kali-Attaker.png
-│   ├── 04_Network Config on Ubuntu.png
-│   ├── 05_Ubuntu-Server Get IP.png
-│   ├── 06_Kali- Ping Ubuntu.png
-│   ├── 07_Server Config - Install SSH (Ubuntu-Server).png
-│   ├── 08_Creat Weak Password-Ann123.png
-│   ├── 09_Attaker Password Install tool.png
-│   ├── 10_Scan the Ubunto Server (Nmap).png
-│   ├── 11_Password Attack Uisng Hydra (Weak User).png
-│   ├── 12_Create Strong Password User-MyS3cureP@ss2025.png
-│   ├── 13_Offline Attack with John the Ripper.png
-│   ├── 14_Export hashes.png
-│   ├── 15_Copy hashes to Kali using SCP.png
-│   ├── 16_Crack the hashes with John on Kali.png
-│   ├── 17_John results
-│   ├── 18_Password Manager (Bitwarden or KeePassXC).png
-│   ├── 19_Create a Vlaut Entry.png
-│   ├── 20_Username Stronguser.png
-│   ├── 21_Bitwarden password generator.png
-│   ├── 22_MFA Demo Using UAlbany Account (sghiasi@albany.edu).png
-│   ├── 23_Users.png
-│   ├── 144_Export hashes.png
+│   ├── 01_Ubuntu_Server_Installed_on_VM.png
+│   ├── 02_Kali-Attacker_Installed_on_VM.png
+│   ├── 03_Network_Config_on_Kali.png
+│   ├── 04_Network_Config_on_Ubuntu.png
+│   ├── 05_Ubuntu_Server_Get_IP.png
+│   ├── 06_Kali_Ping_Ubuntu.png
+│   ├── 07_Server_Config_Install_SSH.png
+│   ├── 08_Create_Weak_Password.png
+│   ├── 09_Attacker_Password_Tool.png
+│   ├── 10_Nmap_Scan.png
+│   ├── 11_Hydra_Attack_Weak_User.png
+│   ├── 12_Create_Strong_User.png
+│   ├── 13_Offline_Attack_John.png
+│   ├── 14_Export_Hashes.png
+│   ├── 15_Copy_Hashes_SCP.png
+│   ├── 16_John_Crack.png
+│   ├── 17_John_Results.png
+│   ├── 18_Bitwarden.png
+│   ├── 19_Create_Vault_Entry.png
+│   ├── 20_Username_Stronguser.png
+│   ├── 21_Password_Generator.png
+│   ├── 22_MFA_Demo.png
+│   ├── 23_Users_List.png
 │
 ├── Results/
 │   └── password_attack_results.xlsx
 │
 └── Configs/
     └── weak_passwords.txt
+```
 
-
----
 
 ## 🔥 Attack Scenarios Tested
 
