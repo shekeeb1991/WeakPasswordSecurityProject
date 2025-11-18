@@ -139,8 +139,8 @@ Install John:
 
 ---
 
-## 📤 [14a_Export hashes](Lab_Screenshots/144_Export%20hashes.png.png)
-[14b_Export hashes](Lab_Screenshots/14_Export%20hashes.png.png)
+## 📤 [144_Export hashes](Lab_Screenshots/144_Export%20hashes.png.png)
+[14_Export hashes](Lab_Screenshots/14_Export%20hashes.png.png)
 
 ### **Export password hashes**
 Run:
