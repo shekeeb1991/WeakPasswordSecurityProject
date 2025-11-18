@@ -164,7 +164,16 @@ demonstrating the importance of strong password policies.
 │   ├── 19_Create_Vault_Entry.png
 │   ├── 20_Username_Stronguser.png
 │   ├── 21_Password_Generator.png
+                                          Password Manager (Bitwarden or KeePassXC)
+                                          Example with Bitwarden:
+                                          1.	Install Bitwarden on my host Windows or inside a VM (your choice).
+                                          2.	Create a vault entry:
+                                              •	Username: stronguser
+                                              •	Password: use the password generator (length 20+, include symbols).
+                                          This demonstrates how password managers make it practical to use very strong, unique passwords that are resistant to wordlists and brute force.
+
 │   ├── 22_MFA_Demo.png
+                                          MFA Demo Using Your UAlbany Account (sghiasi@albany.edu)
 │   ├── 23_Users_List.png
 │
 ├── Results/
