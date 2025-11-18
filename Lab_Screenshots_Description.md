@@ -64,7 +64,7 @@ Commands:
 
 ---
 
-## 🧪 [08_Create Weak Password-Ann123.png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/08_Create%20Weak%20Password-Ann123.png.png)
+## 🧪 [08_Creat Weak Password-Ann123.png.png](WeakPasswordSecurityProject/Lab_Screenshots/08_Creat%20Weak%20Password-Ann123.png.png)
 
 ### **Create a Weak Password User**
 Command:  
