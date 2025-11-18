@@ -1,231 +1,180 @@
 #### Lab Screenshots Description
 
----
-
-### **01_Ubuntu_Server_Installed_on_VM.png**
-Virtual Lab Setup
-Virtual Machines Created
-**Ubuntu-Server VM**
-- Purpose: Target machine (victim server)
+**01_Ubuntu_Server_Installed_on_VM.png**
+Virtual lab setup – Ubuntu Server VM created.
+- Purpose: target machine (victim server)
 - OS: Ubuntu Server 24.04 LTS
 - Memory: 4096 MB
 - Disk: 20–30 GB
 
 ---
 
-### **02_Kali-Attacker_Installed_on_VM.png**
-**Kali-Attacker VM**
-- Purpose: Attacker machine
+**02_Kali-Attacker_Installed_on_VM.png**
+Kali attacker VM created.
+- Purpose: attacker machine
 - OS: Kali Linux rolling
 - Memory: 4096 MB
 - Disk: 30–40 GB
 
 ---
 
-### **03_Network_Config_on_Kali.png**
-### **04_Network_Config_on_Ubuntu.png**
-**Network Configuration (Bridged Mode)**
-For both VMs:
-Settings → Network → Adapter 1
-- ✔ Enable Network Adapter
-- ✔ Attached to: Bridged Adapter
-- ✔ Name: Your Wi-Fi card (Intel AX201 or similar)
+**03_Network_Config_on_Kali.png**
+Network adapter configured on Kali (bridged).
+
+**04_Network_Config_on_Ubuntu.png**
+Network adapter configured on Ubuntu (bridged).
+- Mode: Bridged Adapter
+- Both VMs:
+- Enable Network Adapter
+- Attached to: Bridged Adapter
+- Name: Wi-Fi card (e.g., Intel AX201)
 
 ---
 
-### **05_Ubuntu_Server_Get_IP.png**
-**Confirm Network Connection**
-Ubuntu-Server: Get IP
-- `ip a`
-- Ubuntu-Server IP: **192.168.1.174**
+**05_Ubuntu_Server_Get_IP.png**
+Confirm network connection on Ubuntu server.
+- Command: `ip a`
+- Shows Ubuntu server IP (e.g., 192.168.1.174)
 
 ---
 
-### **06_Kali_Ping_Ubuntu.png**
-**Kali: Ping Ubuntu**
-Command:
-`ping 192.168.1.174`
-
-If we see:
-`64 bytes from 192.168.1.174: icmp_seq=1 ttl=64 time=…`
+**06_Kali_Ping_Ubuntu.png**
+Test connectivity from Kali to Ubuntu.
+- Command: `ping 192.168.1.174`
+- `64 bytes from 192.168.1.174 …` =
 - ✔ Communication works
-- ✔ Lab environment successful
-- ✔ VMs are on the same network
+- ✔ Lab environment working
+- ✔ VMs on same network
 
 ---
 
-### **07_Server_Config_Install_SSH.png**
-**Server Configuration – Install SSH (Ubuntu-Server)**
-Commands:
+**07_Server_Config_Install_SSH.png**
+Install and enable SSH on Ubuntu server.
 - `sudo apt update`
 - `sudo apt install openssh-server -y`
 - `sudo systemctl enable ssh`
 - `sudo systemctl start ssh`
-- `sudo systemctl status ssh`
-
-**Result:** active (running)
+- `sudo systemctl status ssh` → **active (running)**
 
 ---
 
-### **08_Create_Weak_Password.png**
-**Create a Weak Password User**
-Command:
-`sudo adduser weakuser`
-Password used: **Ann123** (intentionally weak)
-
-User fields:
+**08_Create_Weak_Password.png**
+Create a weak-password user on Ubuntu.
+- Command: `sudo adduser weakuser`
+- Password: **Ann123** (intentionally weak)
+- Example fields:
 - Name: Shekeeb
-- Room Number: 123
+- Room: 123
 - Work Phone: 444444444
 
 ---
 
-### **09_Attacker_Password_Tool.png**
-**Create a Strong Password User**
-Command:
-`sudo adduser stronger`
-Password: **MyS3cureP@ss2025**
-
-Fields:
+**09_Attacker_Password_Tool.png**
+Create a strong-password user on Ubuntu.
+- Command: `sudo adduser stronger`
+- Password: **MyS3cureP@ss2025**
+- Example fields:
 - Name: Ghiasi
-- Room Number: 123
+- Room: 123
 - Work Phone: 44444
 
 ---
 
-### **10_Nmap_Scan.png**
-**Attack & Password Cracking — Tool Setup & Nmap Scan**
-
-Install tools on Kali:
+**10_Nmap_Scan.png**
+Scan the Ubuntu server from Kali with Nmap.
+- Install tools:
 - `sudo apt update`
 - `sudo apt install nmap hydra medusa john wordlists -y`
-
-Scan Ubuntu Server:
-`nmap -sV 192.168.1.174`
-
-Expected:
+- Scan command: `nmap -sV 192.168.1.174`
+- Expected:
 - Port 22 open
-- SSH detected
-- Service: OpenSSH
+- SSH service detected (OpenSSH)
 
 ---
 
-### **11_Hydra_Attack_Weak_User.png**
-**Password Attack Using Hydra (Weak User)**
-Command:
-`hydra -l weakuser -p Ann123 ssh://192.168.1.174`
-
-Expected output:
+**11_Hydra_Attack_Weak_User.png**
+Hydra attack against weak SSH user.
+- Command: `hydra -l weakuser -p Ann123 ssh://192.168.1.174`
+- Expected:
 - ✔ Login found
 - ✔ Password cracked instantly
 - Time to crack: **< 1 second**
 
 ---
 
-### **12_Create_Strong_User.png**
-**Hydra Test on Strong User**
-Command:
-`sudo adduser stronger`
-Password: **MyS3cureP@ss2025**
-
-Fields:
-- Name: Ghiasi
-- Room Number: 123
-- Work Phone: 44444
-
-**Your Explanation (kept exactly):**
-For the strong account (stronger with password MyS3cureP@ss2025), I tested Hydra using a single known candidate password.
-Hydra reported a successful login because I supplied the correct password directly with the -p option.
-In a realistic attack, a brute-force or dictionary attack would be extremely unlikely to guess this long, complex password,
-especially if account lockout and rate limiting were enabled. This demonstrates that strong,
-unique passwords are resistant to automated guessing, and Hydra only succeeded here because the exact password was already known.
-
-For the weak user (weakuser), Hydra would be able to crack the password even without knowing it ahead of time,
-because weak passwords are short and appear in common wordlists.
-For the strong user (stronger), Hydra only succeeded because I manually supplied the exact password using the -p option.
-In a real attack scenario, this strong password (MyS3cureP@ss2025!) would not be cracked by brute-force or dictionary attacks,
-demonstrating the importance of strong password policies.
+**12_Create_Strong_User.png**
+Hydra test against strong SSH user.
+- Command: `hydra -l stronger -p MyS3cureP@ss2025 ssh://192.168.1.174`
+- Hydra succeeds **only** because the exact password is given with `-p`.
+- In a real attack, this long complex password would be extremely hard to guess by brute-force or dictionary attack.
+- Shows why strong, unique passwords are resistant to guessing attacks.
 
 ---
 
-### **13_Offline_Attack_John.png**
-**Offline Attack with John the Ripper**
-Show that weak hashes are easy to crack if an attacker steals them.
-Install John:
-`sudo apt install john -y`
+**13_Offline_Attack_John.png**
+Prepare for offline cracking with John the Ripper.
+- Install on Ubuntu: `sudo apt install john -y`
 
 ---
 
-### **14_Export_Hashes.png**
-**Export password hashes**
-Run:
-`sudo unshadow /etc/passwd /etc/shadow | sudo tee /tmp/passwords.txt`
+**14_Export_Hashes.png**
+Export password hashes from Ubuntu.
+- Command:
+- `sudo unshadow /etc/passwd /etc/shadow | sudo tee /tmp/passwords.txt`
 
 ---
 
-### **15_Copy_Hashes_SCP.png**
-**Copy hashes to Kali using SCP**
-On Kali:
+**15_Copy_Hashes_SCP.png**
+Copy hashes from Ubuntu to Kali using SCP.
+- On Kali:
 - `mkdir -p ~/hashes`
 - `cd ~/hashes`
 - `scp serveradmin@192.168.1.174:/tmp/passwords.txt .`
-
-(Change serveradmin & IP if needed.)
-It will ask for your Ubuntu password.
+- Requires Ubuntu account password.
 
 ---
 
-### **16_John_Crack.png**
-**Crack the hashes with John on Kali**
-Start cracking:
-- `john passwords.txt`
-Show cracked passwords:
-- `john --show passwords.txt`
+**16_John_Crack.png**
+Run John the Ripper on Kali.
+- Start cracking: `john passwords.txt`
+- Show results: `john --show passwords.txt`
 
 ---
 
-### **17_John_Results.png**
-**John Results**
-- Weakuser: NOT cracked
-- Stronguser: NOT cracked
-
-**Your Explanation (kept exactly):**
-Although the user weakuser was assigned the password “Ann123”, this password is not truly weak in a cybersecurity context.
-It mixes a name with small numbers and capital letter, making it less likely to appear in common dictionary wordlists.
-In cybersecurity labs, a weak password typically refers to something extremely simple and commonly used, such as:
-- 12345
-- password / password1
-- admin / admin123
+**17_John_Results.png**
+Example John results for this lab.
+- weakuser: **not cracked** in this test
+- stronger: **not cracked**
+- Explanation: “Ann123” is still stronger than classic very-weak passwords like `12345`, `password1`, `admin123`, so it may not appear in default wordlists.
 
 ---
 
-### **18_Bitwarden.png**
-### **19_Create_Vault_Entry.png**
-### **20_Username_Stronguser.png**
-### **21_Password_Generator.png**
-**Password Manager (Bitwarden or KeePassXC)**
-Example with Bitwarden:
-1. Install Bitwarden on host Windows or inside VM.
-2. Create a vault entry:
-- Username: stronguser
-- Password: generated 20+ character random password (with symbols)
-
-This demonstrates how password managers make it practical to use very strong, unique passwords that are resistant to brute-force and wordlist attacks.
+**18_Bitwarden.png**
+**19_Create_Vault_Entry.png**
+**20_Username_Stronguser.png**
+**21_Password_Generator.png**
+Password manager (Bitwarden or KeePassXC) usage.
+- Install Bitwarden (host or VM).
+- Create a vault entry:
+- Username: `stronguser`
+- Password: generated 20+ character random password (with symbols).
+- Demonstrates how password managers make it realistic to use very strong, unique passwords.
 
 ---
 
-### **22_MFA_Demo.png**
-**MFA Demo Using Your UAlbany Account (sghiasi@albany.edu)**
+**22_MFA_Demo.png**
+MFA demonstration using your UAlbany account (`sghiasi@albany.edu`).
+Shows that even if a password is known, MFA can still block unauthorized logins.
 
 ---
 
-### **23_Users_List.png**
-List of created users on Ubuntu Server.
+**23_Users_List.png**
+List of users on the Ubuntu server, confirming creation of `weakuser` and `stronger`.
 
 ---
 
-### **Results/password_attack_results.xlsx**
-Excel summary of password attack results.
+**Results/password_attack_results.xlsx**
+Excel file summarizing Hydra and John cracking results.
 
-### **Configs/weak_passwords.txt**
-Wordlist used for weak password cracking tests.
+**Configs/weak_passwords.txt**
+Wordlist used for password-attack testing (weak password examples).
