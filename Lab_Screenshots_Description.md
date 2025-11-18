@@ -77,7 +77,7 @@ Command:
 
 ---
 
-## 🧪 [09_Attacker Password Install tool.png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/09_Attacker%20Password%20Install%20tool.png.png)
+## 🧪 [09_Attacker Password Install tool.png.png](WeakPasswordSecurityProject/Lab_Screenshots/09_Attacker%20Password%20Install%20tool.png.png)
 ### **Create a Strong Password User**
 Command:  
 `sudo adduser stronger`  
