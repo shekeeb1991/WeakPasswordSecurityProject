@@ -107,7 +107,7 @@ Expected:
 
 ---
 
-## 💥 [11_Password Attack Using Hydra (Weak User).png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/11_Password%20Attack%20Using%20Hydra%20(Weak%20User).png.png)
+## 💥 [11_Password Attack Using Hydra (Weak User)](Lab_Screenshots/11_Password%20Attack%20Using%20Hydra%20(Weak%20User).png.png)
 ### **Password Attack Using Hydra**
 Command:  
 `hydra -l weakuser -p Ann123 ssh://192.168.1.174`
@@ -139,14 +139,16 @@ Install John:
 
 ---
 
-## 📤 [144_Export hashes.png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/144_Export%20hashes.png.png)
+## 📤 [14a_Export hashes](Lab_Screenshots/144_Export%20hashes.png.png)
+[14b_Export hashes](Lab_Screenshots/14_Export%20hashes.png.png)
+
 ### **Export password hashes**
 Run:
 `sudo unshadow /etc/passwd /etc/shadow | sudo tee /tmp/passwords.txt`
 
 ---
 
-## 🔁 [15_Copy hashes to Kali using SCP.png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/15_Copy%20hashes%20to%20Kali%20using%20SCP.png.png)
+## 🔁 [15_Copy hashes to Kali using SCP](Lab_Screenshots/15_Copy%20hashes%20to%20Kali%20using%20SCP.png.png)
 ### **Copy hashes to Kali using SCP**
 On Kali:
 - `mkdir -p ~/hashes`
@@ -155,14 +157,14 @@ On Kali:
 
 ---
 
-## 🔓 [16_Crack the hashes with John on Kali.png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/16_Crack%20the%20hashes%20with%20John%20on%20Kali.png.png)
+## 🔓 [16_Crack the hashes with John on Kali](Lab_Screenshots/16_Crack%20the%20hashes%20with%20John%20on%20Kali.png.png)
 ### **Crack hashes with John**
 - `john passwords.txt`
 - `john --show passwords.txt`
 
 ---
 
-## 📊 [17_John results.png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/17_John%20results.png.png)
+## 📊 [17_John results](Lab_Screenshots/17_John%20results.png.png)
 ### **John Results**
 - Weakuser: NOT cracked  
 - Stronguser: NOT cracked  
@@ -175,22 +177,22 @@ Ann123 is not extremely weak — it does not appear in common wordlists like:
 
 ---
 
-## 🔑 [18_Bitwarden.png](Lab_Screenshots/18_Bitwarden.png)  
-## 🔑 [19_Create_Vault_Entry.png](Lab_Screenshots/19_Create_Vault_Entry.png)  
-## 🔑 [20_Username_Stronguser.png](Lab_Screenshots/20_Username_Stronguser.png)  
-## 🔑 [21_Password_Generator.png](Lab_Screenshots/21_Password_Generator.png)
+## 🔑 [18_Password Manager (Bitwarden or KeePassXC)](Lab_Screenshots/18_Password%20Manager%20(Bitwarden%20or%20KeePassXC).png.png)  
+## 🔑 [19_Create a Vault Entry](Lab_Screenshots/19_Create%20a%20Vault%20Entry.png.png)  
+## 🔑 [20_Username Stronguser](Lab_Screenshots/20_Username%20Stronguser.png.png)  
+## 🔑 [21_Bitwarden password generator](Lab_Screenshots/21_Bitwarden%20password%20generator.png.png)
 ### **Password Manager Demonstration**
 - Create secure passwords  
 - Store credentials safely  
 
 ---
 
-## 📱 [22_MFA_Demo.png](Lab_Screenshots/22_MFA_Demo.png)
+## 📱 [22_MFA Demo Using UAlbany Account](Lab_Screenshots/22_MFA%20Demo%20Using%20UAlbany%20Account%20(sghiasi%40albany.edu).png.png)
 ### **MFA Demo Using UAlbany Account**
 
 ---
 
-## 👥 [23_Users_List.png](Lab_Screenshots/23_Users_List.png)
+## 👥 [23_Users](Lab_Screenshots/23_Users.png.png)
 List of created users on Ubuntu Server.
 
 ---
