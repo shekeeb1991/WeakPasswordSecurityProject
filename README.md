@@ -158,26 +158,26 @@ https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswor
 
 ## 🔥 Attack Scenarios Tested
 
-### **1️⃣ Hydra SSH — Weak Password**
+### ** 1️ Hydra SSH — Weak Password**
 - **User:** `weakuser`  
-- **Cracked:** ✅ Yes  
+- **Cracked:** Yes  
 - **Time:** ~5 seconds  
 - **Result:** Success  
 
 ---
 
-### **2️⃣ Hydra SSH — Strong Password**
+### ** 2️ Hydra SSH — Strong Password**
 - **User:** `stronguser`  
 - **Password:** 20+ random Bitwarden password  
-- **Cracked:** ❌ No  
+- **Cracked:** No  
 - **Time tested:** 2 minutes  
 - **Result:** Failed (Strong)  
 
 ---
 
-### **3️⃣ John the Ripper — Offline Hash**
+### ** 3️ John the Ripper — Offline Hash**
 - **Hash type:** /etc/shadow extract  
-- **Cracked:** ✅ Yes  
+- **Cracked:** Yes  
 - **Time:** ~10 seconds  
 
 ---
