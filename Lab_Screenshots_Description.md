@@ -35,6 +35,7 @@ Settings → Network → Adapter 1
 
 ## 🔎 [05_Ubuntu-Server Get IP.png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/05_Ubuntu-Server%20Get%20IP.png.png)
 ### **Confirm Network Connection**
+- Ubuuntu-Server: Get Ip
 - `ip a`
 - Ubuntu-Server IP: **192.168.1.174**
 
@@ -45,7 +46,7 @@ Settings → Network → Adapter 1
 Command:  
 `ping 192.168.1.174`
 
-If you see:  
+If we see:  
 `64 bytes from 192.168.1.174: icmp_seq=1 ttl=64 time=…`
 - ✔ Communication works
 - ✔ Lab environment successful
@@ -54,7 +55,7 @@ If you see:
 ---
 
 ## 🔐 [07_Server Config - Install SSH (Ubuntu-Server).png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/07_Server%20Config%20-%20Install%20SSH%20(Ubuntu-Server).png.png)
-### **Server Configuration – Install SSH**
+### **Server Configuration – Install SSH on Ubuntu-Server**
 Commands:
 - `sudo apt update`
 - `sudo apt install openssh-server -y`
@@ -87,6 +88,13 @@ Fields:
 - Name: Ghiasi
 - Room Number: 123
 - Work Phone: 44444
+
+- For the strong account (stronger with password MyS3cureP@ss2025), I tested Hydra using a single known candidate password.  
+Hydra reported a successful login because I supplied the correct password directly with the -p option.  
+In a realistic attack, a brute-force or dictionary attack would be extremely unlikely to guess this long, complex password.
+
+For weakuser: weak passwords appear in wordlists.  
+For stronger: Hydra only succeeded because the password was manually provided.
 
 ---
 
@@ -121,13 +129,6 @@ Expected:
 
 ## 🔐 [12_Create Strong Password User-MyS3cureP@ss2025.png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/12_Create%20Strong%20Password%20User-MyS3cureP@ss2025.png.png)
 ### **Hydra Test on Strong User**
-  
-For the strong account (stronger with password MyS3cureP@ss2025), I tested Hydra using a single known candidate password.  
-Hydra reported a successful login because I supplied the correct password directly with the -p option.  
-In a realistic attack, a brute-force or dictionary attack would be extremely unlikely to guess this long, complex password.
-
-For weakuser: weak passwords appear in wordlists.  
-For stronger: Hydra only succeeded because the password was manually provided.
 
 ---
 
@@ -166,10 +167,9 @@ On Kali:
 ## 📊 [17_John results](Lab_Screenshots/17_John%20results.png.png)
 ### **John Results**
 - Weakuser: NOT cracked  
-- Stronguser: NOT cracked  
-
-**Your Explanation (kept EXACTLY):**  
-Ann123 is not extremely weak — it does not appear in common wordlists like:  
+- Stronguser: NOT cracked   
+Although the user weakuser was assigned the password “Ann123”, this password is not truly weak in a cybersecurity context. It mixes a name with small numbers and capital letter, making it less likely to appear in common dictionary wordlists.
+In cybersecurity labs, a weak password typically refers to something extremely simple and commonly used, such as: 
 - 12345  
 - password1  
 - admin123  
@@ -180,9 +180,14 @@ Ann123 is not extremely weak — it does not appear in common wordlists like:
 ## 🔑 [19_Create a Vault Entry](Lab_Screenshots/19_Create%20a%20Vault%20Entry.png.png)  
 ## 🔑 [20_Username Stronguser](Lab_Screenshots/20_Username%20Stronguser.png.png)  
 ## 🔑 [21_Bitwarden password generator](Lab_Screenshots/21_Bitwarden%20password%20generator.png.png)
-### **Password Manager Demonstration**
-- Create secure passwords  
-- Store credentials safely  
+### **Password Manager (Bitwarden or KeePassXC)**
+- Example with Bitwarden:
+1.	Install Bitwarden on my host Windows or inside a VM.
+2.	Create a vault entry:
+        o	Username: stronguser
+        o	Password: use the password generator (length 20+, include symbols).
+This demonstrates how password managers make it practical to use very strong, unique passwords that are resistant to wordlists and brute force.
+  
 
 ---
 
