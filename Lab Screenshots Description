@@ -1,237 +1,136 @@
-🖼️ Lab Screenshots Description
-🖥️ 01 — Ubuntu Server Installed on VM
+#### Lab Screenshots Description
 
-Virtual Lab Setup → Ubuntu Server VM
+---
 
-Purpose: Target machine (victim server)
+### **01_Ubuntu_Server_Installed_on_VM.png**
+**Ubuntu-Server VM Created**
+- Purpose: Target machine (victim server)
+- OS: Ubuntu Server 24.04 LTS
+- Memory: 4096 MB
+- Disk: 20–30 GB
 
-OS: Ubuntu Server 24.04 LTS
+---
 
-Memory: 4096 MB
+### **02_Kali-Attacker_Installed_on_VM.png**
+**Kali-Attacker VM Created**
+- Purpose: Attacker machine
+- OS: Kali Linux rolling
+- Memory: 4096 MB
+- Disk: 30–40 GB
 
-Disk: 20–30 GB
+---
 
-🖥️ 02 — Kali Attacker Installed on VM
+### **03_Network_Config_on_Kali.png**
+### **04_Network_Config_on_Ubuntu.png**
+**Network Configuration (Bridged Mode)**
+Settings → Network → Adapter 1  
+- ✔ Enable Network Adapter  
+- ✔ Attached to: Bridged Adapter  
+- ✔ Name: Wi-Fi card (Intel AX201 or similar)
 
-Kali-Attacker VM
+---
 
-Purpose: Attacker machine
+### **05_Ubuntu_Server_Get_IP.png**
+**Confirm Network Connection**
+- Command: `ip a`
+- Ubuntu Server IP: **192.168.1.174**
 
-OS: Kali Linux rolling
+---
 
-Memory: 4096 MB
-
-Disk: 30–40 GB
-
-🌐 03 — Network Config on Kali
-🌐 04 — Network Config on Ubuntu
-
-Network Configuration (Bridged Mode)
-Settings → Network → Adapter 1
-
-✔ Enable Network Adapter
-
-✔ Attached to: Bridged Adapter
-
-✔ Name: Your Wi-Fi card (Intel AX201 or similar)
-
-🌐 05 — Ubuntu Server Get IP
-
-Confirm Network Connection
-
-Command: ip a
-
-Ubuntu IP shown (example): 192.168.1.174
-
-🔁 06 — Kali Ping Ubuntu
-
+### **06_Kali_Ping_Ubuntu.png**
+**Kali to Ubuntu Connectivity Test**
 Command:
+`ping 192.168.1.174`
 
-ping 192.168.1.174
+If you see:
+`64 bytes from 192.168.1.174…`
+- ✔ Communication works  
+- ✔ Lab setup correct  
+- ✔ Same network confirmed  
 
+---
 
-If output shows:
-64 bytes from 192.168.1.174: icmp_seq=1 ttl=64 time=…
+### **07_Server_Config_Install_SSH.png**
+**Install & Enable SSH on Ubuntu**
+- `sudo apt update`
+- `sudo apt install openssh-server -y`
+- `sudo systemctl enable ssh`
+- `sudo systemctl start ssh`
+- `sudo systemctl status ssh` → **active (running)**
 
-Then:
+---
 
-✔ Network communication works
+### **08_Create_Weak_Password.png**
+**Create Weak User**
+- `sudo adduser weakuser`
+- Password: **Ann123**
 
-✔ Lab environment works correctly
+User fields (example):
+- Name: Shekeeb
+- Room: 123
+- Work Phone: 444444444
 
-✔ VMs are on the same network
+---
 
-🔧 07 — Install SSH on Ubuntu Server
-
-Commands:
-
-sudo apt update
-sudo apt install openssh-server -y
-sudo systemctl enable ssh
-sudo systemctl start ssh
-sudo systemctl status ssh
-
-
-Result: active (running)
-
-👤 08 — Create Weak Password User
-
-Command:
-
-sudo adduser weakuser
-
-
-Password: Ann123
-
-User example fields:
-
-Name: Shekeeb
-
-Room Number: 123
-
-Work Phone: 444444444
-
-👤 09 — Create Strong Password User
-
-Command:
-
-sudo adduser stronger
-
-
-Password: MyS3cureP@ss2025
+### **09_Attacker_Password_Tool.png**
+**Create Strong User**
+- `sudo adduser stronger`
+- Password: **MyS3cureP@ss2025**
 
 Fields:
+- Name: Ghiasi  
+- Room: 123  
+- Phone: 44444  
 
-Name: Ghiasi
+---
 
-Room Number: 123
-
-Work Phone: 44444
-
-🔍 10 — Nmap Scan
-
+### **10_Nmap_Scan.png**
+**Nmap Scan from Kali**
 Install tools:
-
-sudo apt update
-sudo apt install nmap hydra medusa john wordlists -y
-
+- `sudo apt update`
+- `sudo apt install nmap hydra medusa john wordlists -y`
 
 Scan:
-
-nmap -sV 192.168.1.174
-
+`nmap -sV 192.168.1.174`
 
 Expected:
+- Port 22 open  
+- OpenSSH detected  
 
-Port 22 open
+---
 
-SSH detected
-
-Service: OpenSSH
-
-🔓 11 — Hydra Attack on Weak User
-
-Command:
-
-hydra -l weakuser -p Ann123 ssh://192.168.1.174
-
+### **11_Hydra_Attack_Weak_User.png**
+**Hydra Attack — Weak User**
+- `hydra -l weakuser -p Ann123 ssh://192.168.1.174`
 
 Expected:
+- ✔ Login found  
+- ✔ Password cracked  
+- Time: **<1 second**
 
-✔ Login found
+---
 
-✔ Password cracked instantly
+### **12_Create_Strong_User.png**
+**Hydra Test — Strong User**
+Your explanation (kept exactly):
 
-Time to crack: < 1 second
+> Hydra succeeded only because the **correct password was supplied** with `-p`.  
+> In a real attack, brute-force/dictionary would **not** guess this strong password.  
+> Shows importance of strong unique passwords.
 
-🔐 12 — Hydra Test on Strong User
+---
 
-Command:
-
-hydra -l stronger -p MyS3cureP@ss2025 ssh://192.168.1.174
-
-
-Your Full Explanation (kept EXACTLY as you wrote):
-
-Hydra succeeded because you supplied the correct password manually using -p.
-In a real brute-force attack this password would not be cracked due to complexity, length, and unpredictability.
-This demonstrates the importance of strong, unique passwords.
-
-Weak passwords (like Ann123) can be cracked because they appear in common wordlists.
-Strong passwords cannot be cracked unless the attacker already knows them.
-
-🧪 13 — Offline Attack with John
-
+### **13_Offline_Attack_John.png**
 Install John:
+`sudo apt install john -y`
 
-sudo apt install john -y
+---
 
-📤 14 — Export Hashes
+### **14_Export_Hashes.png**
+Export:
+`sudo unshadow /etc/passwd /etc/shadow | sudo tee /tmp/passwords.txt`
 
-Run:
+---
 
-sudo unshadow /etc/passwd /etc/shadow | sudo tee /tmp/passwords.txt
-
-🔁 15 — Copy Hashes to Kali (SCP)
-
-On Kali:
-
-mkdir -p ~/hashes
-cd ~/hashes
-scp serveradmin@192.168.1.174:/tmp/passwords.txt .
-
-
-(Will ask for password.)
-
-🧩 16 — John Crack
-
-Start cracking:
-
-john passwords.txt
-
-
-Show results:
-
-john --show passwords.txt
-
-📊 17 — John Results
-
-weakuser: NOT cracked
-
-stronger: NOT cracked
-
-Your explanation (kept EXACT):
-“Ann123” is not in common wordlists and is stronger than basic weak passwords like:
-
-12345
-
-password / password1
-
-admin / admin123
-
-🔐 18 — Bitwarden
-📝 19 — Create Vault Entry
-👤 20 — Username Stronguser
-🔁 21 — Password Generator
-
-Password Manager Demonstration
-
-Install Bitwarden
-
-Create an entry:
-
-Username: stronguser
-
-Password: 20+ character auto-generated
-
-Shows why password managers make strong passwords easy.
-
-🔑 22 — MFA Demo
-
-Using your UAlbany account: sghiasi@albany.edu
-
-Shows how MFA stops unauthorized access even if password is known.
-
-👥 23 — Users List
-
-Confirms creation of weakuser and stronger.
+### **15_Copy_Hashes_SCP.png**
+Copy hashes to Kali:
