@@ -121,8 +121,7 @@ Expected:
 
 ## 🔐 [12_Create Strong Password User-MyS3cureP@ss2025.png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/12_Create%20Strong%20Password%20User-MyS3cureP@ss2025.png.png)
 ### **Hydra Test on Strong User**
-
-**Your Explanation (kept EXACTLY):**  
+  
 For the strong account (stronger with password MyS3cureP@ss2025), I tested Hydra using a single known candidate password.  
 Hydra reported a successful login because I supplied the correct password directly with the -p option.  
 In a realistic attack, a brute-force or dictionary attack would be extremely unlikely to guess this long, complex password.
@@ -192,11 +191,6 @@ Ann123 is not extremely weak — it does not appear in common wordlists like:
 
 ---
 
-## 👥 [23_Users](Lab_Screenshots/23_Users.png.png)
+## 👥 [23_Users](Lab_Screenshots/23_Users.png)
 List of created users on Ubuntu Server.
 
----
-
-## 📂 Supporting Files  
-- **[password_attack_results.xlsx](Results/password_attack_results.xlsx)**  
-- **[weak_passwords.txt](Configs/weak_passwords.txt)**  
