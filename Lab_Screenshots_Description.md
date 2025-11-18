@@ -4,7 +4,8 @@ A detailed explanation of each screenshot captured during the Weak Password Secu
 
 ---
 
-## 🔧 [01_Ubuntu_Server_Installed_on_VM.png](Lab_Screenshots/01_Ubuntu_Server_Installed_on_VM.png)
+## 🔧 [01_Ubuntu Server Installed on VM.png.png](https://github.com/shekeeb1991/WeakPasswordSecurityProject/blob/main/WeakPasswordSecurityProject/Lab_Screenshots/01_Ubuntu%20Server%20Installed%20on%20VM.png.png)
+
 ### **Ubuntu-Server VM Created**
 - Purpose: Target machine (victim server)
 - OS: Ubuntu Server 24.04 LTS
