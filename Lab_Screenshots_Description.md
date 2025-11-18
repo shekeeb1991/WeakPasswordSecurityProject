@@ -1,4 +1,4 @@
-# 🖼️ Lab Screenshots Description
+#                          Lab Screenshots Description
 
 A detailed explanation of each screenshot captured during the Weak Password Security Project lab.
 
